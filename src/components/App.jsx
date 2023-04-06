@@ -1,16 +1,14 @@
+import { AppContainer } from "./App.styled";
+import { PhonebookForm } from "./Phonebook/Phonebook";
+
 export const App = () => {
+//   state = {
+//   contacts: [],
+//   name: ''
+// }
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <AppContainer>
+      <PhonebookForm title="Phonebook"/>
+    </AppContainer>
   );
 };
