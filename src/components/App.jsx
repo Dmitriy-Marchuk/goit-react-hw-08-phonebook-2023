@@ -3,6 +3,7 @@ import { AppContainer } from './App.styled';
 import PhonebookForm from './Phonebook/Phonebook';
 import Contacts from './Contacts/Contacts';
 import { nanoid } from 'nanoid';
+import Filter from './Filter/Filter';
 
 class App extends Component {
   state = {
@@ -14,16 +15,25 @@ class App extends Component {
     ],
     name: '',
     number: '',
+    filter: '',
   };
 
   addContact = data => {
-    console.log(data);
-
     const contact = {
       id: nanoid(),
       name: data.name,
       number: data.number,
     };
+
+    const contactsNames = this.state.contacts.map(contact => contact.name);
+    const contactsNumbers = this.state.contacts.map(contact => contact.number);
+
+    if (contactsNames.includes(data.name)) {
+      return alert(`${data.name} is already in contacts`);
+    }
+    if (contactsNumbers.includes(data.number)) {
+      return alert(`${data.number} is already in contacts`);
+    }
 
     this.setState(prevState => ({
       contacts: [contact, ...prevState.contacts],
@@ -36,12 +46,34 @@ class App extends Component {
     }));
   };
 
+  changeFilter = e => {
+    this.setState({ filter: e.currentTarget.value });
+  };
+
+  getVisibleContacts = () => {
+    const { contacts, filter } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
+  };
+
   render() {
-    const { contacts } = this.state;
+    const { filter } = this.state;
+    const visibleContacts = this.getVisibleContacts();
+
     return (
       <AppContainer>
-        <PhonebookForm onSubmit={this.addContact} />
-        <Contacts contacts={contacts} onDeleteContact={this.deleteContact} />
+        <div>
+          <h2>Phonebook</h2>
+          <PhonebookForm onSubmit={this.addContact} />
+          <h2>Contacts</h2>
+          <Filter value={filter} onChange={this.changeFilter} />
+          <Contacts
+            contacts={visibleContacts}
+            onDeleteContact={this.deleteContact}
+          />
+        </div>
       </AppContainer>
     );
   }
