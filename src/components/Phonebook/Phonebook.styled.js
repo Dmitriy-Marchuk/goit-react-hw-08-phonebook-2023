@@ -6,11 +6,14 @@ export const StyledForm = styled.form`
   border: 1px solid black;
   border-radius: 15px;
   padding: 20px 120px 40px 20px;
+  padding: 20px 120px 40px 20px;
   margin-bottom: 30px;
 `;
 
 export const StyledInput = styled.input`
   width: 250px;
+  padding: 5px;
+  border: 1px solid black;
   padding: 5px;
   border: 1px solid black;
   border-radius: 10px;
@@ -31,6 +34,7 @@ export const StyledButton = styled.button`
   align-self: flex-start;
   display: flex;
   padding: 10px 20px;
+  border: 1px solid black;
   border: 1px solid black;
   border-radius: 15px;
   cursor: pointer;
