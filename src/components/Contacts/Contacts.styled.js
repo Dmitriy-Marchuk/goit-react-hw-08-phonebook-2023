@@ -4,9 +4,7 @@ export const ContactsElement = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 25px;
   margin-bottom: 10px;
-
   div {
     display: inherit;
   }
@@ -18,9 +16,10 @@ export const ContactsElement = styled.li`
 `;
 
 export const DeleteButton = styled.button`
-  font-size: 20px;
+  font-size: 15px;
   padding: 5px 10px;
-  border-radius: 15px;
+  border: 1px solid black;
+  border-radius: 8px;
   cursor: pointer;
   :hover,
   :focus {
