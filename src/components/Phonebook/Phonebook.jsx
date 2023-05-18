@@ -4,64 +4,49 @@ import {
   StyledLabel,
   StyledButton,
 } from './Phonebook.styled';
-import { useState } from 'react';
-import { nanoid } from 'nanoid';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/actions';
+import { getContacts } from 'redux/selectors';
 
-export const PhonebookForm = ({ onSubmit, title }) => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
-
-  const nameInputId = nanoid();
-  const numberInputId = nanoid();
-
-  const handleInputChange = e => {
-    const { name, value } = e.currentTarget;
-
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'number':
-        setNumber(value);
-        break;
-      default:
-        return;
-    }
-  };
+export const PhonebookForm = ({ title }) => {
+  const dispatch = useDispatch();
+  const getContactsStore = useSelector(getContacts);
 
   const handleSubmit = e => {
-    e.preventDefault();
-    onSubmit({ name, number });
-    reset();
-  };
+    const form = e.target;
+    const name = form.elements.name.value;
+    const number = form.elements.number.value;
 
-  const reset = () => {
-    setName('');
-    setNumber('');
+    e.preventDefault();
+
+    if (getContactsStore) {
+      getContactsStore.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+        ? alert(name + 'is already in contact book!')
+        : dispatch(addContact(name, number));
+    }
+    form.reset();
   };
 
   return (
     <>
       <h2>{title}</h2>
       <StyledForm onSubmit={handleSubmit}>
-        <StyledLabel htmlFor={nameInputId}>Name</StyledLabel>
+        <StyledLabel htmlFor="inputName">Name</StyledLabel>
         <StyledInput
           name="name"
-          id={nameInputId}
+          id="inputName"
           type="text"
-          value={name}
-          onChange={handleInputChange}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-        <StyledLabel htmlFor={numberInputId}>Number</StyledLabel>
+        <StyledLabel htmlFor="inputNumber">Number</StyledLabel>
         <StyledInput
           name="number"
-          id={numberInputId}
+          id="inputNumber"
           type="tel"
-          value={number}
-          onChange={handleInputChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
