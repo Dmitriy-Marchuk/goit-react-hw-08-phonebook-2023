@@ -20,7 +20,7 @@ export const StyledInput = styled.input`
   border-radius: 10px;
   margin-bottom: 20px;
   font-size: 20px;
-  scroll :hover,
+  :hover,
   :focus {
     border-color: tomato;
     outline: none;
