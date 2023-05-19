@@ -7,6 +7,7 @@ export const FilterWrapper = styled.div`
 `;
 export const StyledFilter = styled.input`
   width: 250px;
+  height: 100%;
   padding: 5px;
   border: 1px solid black;
   border-radius: 10px;

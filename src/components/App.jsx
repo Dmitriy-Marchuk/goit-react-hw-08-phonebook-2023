@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { AppContainer } from './App.styled';
+import { nanoid } from 'nanoid';
 import PhonebookForm from './Phonebook/Phonebook';
 import Contacts from './Contacts/Contacts';
-import { nanoid } from 'nanoid';
 import Filter from './Filter/Filter';
+import { AppContainer } from './App.styled';
 
 const App = () => {
   const [contacts, setContacts] = useState(

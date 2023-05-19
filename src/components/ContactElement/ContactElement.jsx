@@ -5,7 +5,7 @@ const { DeleteButton } = require('components/Contacts/Contacts.styled');
 const { ContactElementStyled } = require('./ContactElement.styled');
 
 const ContactElement = ({ contact }) => {
-  const { id, name, number } = contact;
+  const { name, number } = contact;
 
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(contact.id));

@@ -1,12 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/contactsSlice';
+import { getContacts } from 'redux/selectors';
 import {
   StyledForm,
   StyledInput,
   StyledLabel,
   StyledButton,
 } from './Phonebook.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
-import { getContacts } from 'redux/selectors';
 
 export const PhonebookForm = ({ title }) => {
   const dispatch = useDispatch();

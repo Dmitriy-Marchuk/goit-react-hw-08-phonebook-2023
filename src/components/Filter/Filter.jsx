@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyledFilter, StyledLabel, FilterWrapper } from './Filter.styled';
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
+import { StyledFilter, StyledLabel, FilterWrapper } from './Filter.styled';
 
 const Filter = ({ title }) => {
   const dispatch = useDispatch();
