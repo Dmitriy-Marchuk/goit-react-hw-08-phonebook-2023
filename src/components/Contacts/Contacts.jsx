@@ -5,9 +5,13 @@ import ContactElement from 'components/ContactElement/ContactElement';
 
 const Contacts = () => {
   const contacts = useSelector(getContacts);
-  const queryName = useSelector(getFilter).filter.toLowerCase().trim();
+  const queryName = useSelector(getFilter)?.filter?.toLowerCase().trim() || '';
 
   const filteredContacts = () => {
+    if (!contacts || !contacts.items) {
+      return [];
+    }
+
     return contacts.filter(
       contact =>
         contact.name.toLowerCase().trim().includes(queryName) ||

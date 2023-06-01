@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
+// import { deleteContact } from 'redux/contactsSlice';
 
 const { DeleteButton } = require('components/Contacts/Contacts.styled');
 const { ContactElementStyled } = require('./ContactElement.styled');
@@ -8,7 +8,7 @@ const ContactElement = ({ contact }) => {
   const { name, number } = contact;
 
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(contact.id));
+  // const handleDelete = () => dispatch(deleteContact(contact.id));
 
   return (
     <ContactElementStyled>
@@ -16,7 +16,11 @@ const ContactElement = ({ contact }) => {
         <p>{name}:</p>
         <p>{number}</p>
       </div>
-      <DeleteButton onClick={handleDelete}>Delete contact</DeleteButton>
+      <DeleteButton
+      // onClick={handleDelete}
+      >
+        Delete contact
+      </DeleteButton>
     </ContactElementStyled>
   );
 };

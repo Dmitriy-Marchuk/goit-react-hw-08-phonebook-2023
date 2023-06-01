@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+// import { addContact } from 'redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
 import {
   StyledForm,
@@ -19,13 +19,13 @@ export const PhonebookForm = ({ title }) => {
 
     e.preventDefault();
 
-    if (getContactsStore) {
-      getContactsStore.find(
-        contact => contact.name.toLowerCase() === name.toLowerCase()
-      )
-        ? alert(name + 'is already in contact book!')
-        : dispatch(addContact(name, number));
-    }
+    // if (getContactsStore) {
+    //   getContactsStore.find(
+    //     contact => contact.name.toLowerCase() === name.toLowerCase()
+    //   )
+    //     ? alert(name + 'is already in contact book!')
+    //     : dispatch(addContact(name, number));
+    // }
     form.reset();
   };
 
