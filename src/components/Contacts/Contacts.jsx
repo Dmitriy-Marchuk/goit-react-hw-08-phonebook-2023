@@ -5,23 +5,23 @@ import ContactElement from 'components/ContactElement/ContactElement';
 
 const Contacts = () => {
   const contacts = useSelector(getContacts);
-  const queryName = useSelector(getFilter)?.filter?.toLowerCase().trim() || '';
+  // const queryName = useSelector(getFilter)?.filter?.toLowerCase().trim() || '';
 
-  const filteredContacts = () => {
-    if (!contacts || !contacts.items) {
-      return [];
-    }
+  // const filteredContacts = () => {
+  //   if (!contacts || !contacts.items) {
+  //     return [];
+  //   }
 
-    return contacts.filter(
-      contact =>
-        contact.name.toLowerCase().trim().includes(queryName) ||
-        contact.number.toLowerCase().trim().includes(queryName)
-    );
-  };
+  //   return contacts.items.filter(
+  //     contact =>
+  //       contact.name.toLowerCase().trim().includes(queryName) ||
+  //       contact.number.toLowerCase().trim().includes(queryName)
+  //   );
+  // };
 
   return (
     <ul>
-      {filteredContacts().map(contact => (
+      {contacts.map(contact => (
         <ContactElement key={contact.id} contact={contact} />
       ))}
     </ul>

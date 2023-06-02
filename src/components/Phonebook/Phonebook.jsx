@@ -7,6 +7,7 @@ import {
   StyledLabel,
   StyledButton,
 } from './Phonebook.styled';
+import { addContact } from 'redux/operations';
 
 export const PhonebookForm = ({ title }) => {
   const dispatch = useDispatch();
@@ -16,8 +17,10 @@ export const PhonebookForm = ({ title }) => {
     const form = e.target;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
+    const contact = { name, number };
 
     e.preventDefault();
+    dispatch(addContact(contact));
 
     // if (getContactsStore) {
     //   getContactsStore.find(
