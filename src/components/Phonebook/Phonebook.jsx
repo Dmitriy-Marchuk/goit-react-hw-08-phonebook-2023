@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // import { addContact } from 'redux/contactsSlice';
-import { getContacts } from 'redux/selectors';
+// import { getContacts } from 'redux/selectors';
 import {
   StyledForm,
   StyledInput,
@@ -11,7 +11,7 @@ import { addContact } from 'redux/operations';
 
 export const PhonebookForm = ({ title }) => {
   const dispatch = useDispatch();
-  const getContactsStore = useSelector(getContacts);
+  // const getContactsStore = useSelector(getContacts);
 
   const handleSubmit = e => {
     const form = e.target;
