@@ -1,6 +1,4 @@
-import { useDispatch } from 'react-redux';
-// import { addContact } from 'redux/contactsSlice';
-// import { getContacts } from 'redux/selectors';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   StyledForm,
   StyledInput,
@@ -8,10 +6,11 @@ import {
   StyledButton,
 } from './Phonebook.styled';
 import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/selectors';
 
 export const PhonebookForm = ({ title }) => {
   const dispatch = useDispatch();
-  // const getContactsStore = useSelector(getContacts);
+  const getContactsStore = useSelector(selectContacts);
 
   const handleSubmit = e => {
     const form = e.target;
@@ -22,13 +21,13 @@ export const PhonebookForm = ({ title }) => {
     e.preventDefault();
     dispatch(addContact(contact));
 
-    // if (getContactsStore) {
-    //   getContactsStore.find(
-    //     contact => contact.name.toLowerCase() === name.toLowerCase()
-    //   )
-    //     ? alert(name + 'is already in contact book!')
-    //     : dispatch(addContact(name, number));
-    // }
+    if (getContactsStore) {
+      getContactsStore.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+        ? alert(name + 'is already in contact book!')
+        : dispatch(addContact(name, number));
+    }
     form.reset();
   };
 
