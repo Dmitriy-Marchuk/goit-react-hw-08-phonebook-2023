@@ -8,15 +8,19 @@ import { fetchContacts } from 'redux/operations';
 import { selectError, selectIsLoading } from 'redux/selectors';
 import { Route, Router, Routes } from 'react-router-dom';
 import Layout from './Layout';
+import HomePage from 'pages/HomePage';
+import ContactsPage from 'pages/ContactsPage';
+import RegistrationPage from 'pages/RegistrationPage';
+import LoginPage from 'pages/LoginPage';
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<div>Homepage Page</div>} />
-        <Route path="/register" element={<div>Register Page</div>} />
-        <Route path="/login" element={<div>Login Page</div>} />
-        <Route path="/contacts" element={<div>Contacts Page</div>} />
+        <Route index element={<HomePage />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
       </Route>
     </Routes>
   );
