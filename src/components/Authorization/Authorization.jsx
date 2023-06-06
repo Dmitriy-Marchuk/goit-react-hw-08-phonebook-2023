@@ -4,7 +4,7 @@ import { AuthWrapper } from './Authorization.styled';
 const Authorization = () => {
   return (
     <AuthWrapper>
-      <NavItem to="/register">Registration</NavItem>
+      <NavItem to="/registration">Registration</NavItem>
       <NavItem to="/login">Login</NavItem>
     </AuthWrapper>
   );

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
 const { DeleteButton } = require('components/Contacts/Contacts.styled');
 const { ContactElementStyled } = require('./ContactElement.styled');

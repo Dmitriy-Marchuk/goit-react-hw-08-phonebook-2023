@@ -1,12 +1,5 @@
-import React, { useEffect } from 'react';
-import PhonebookForm from './Phonebook/Phonebook';
-import Contacts from './Contacts/Contacts';
-import Filter from './Filter/Filter';
-import { AppContainer } from './App.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { selectError, selectIsLoading } from 'redux/selectors';
-import { Route, Router, Routes } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import HomePage from 'pages/HomePage';
 import ContactsPage from 'pages/ContactsPage';
@@ -18,9 +11,10 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="*" element={<div>NO PAGE</div>} />
       </Route>
     </Routes>
   );
