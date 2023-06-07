@@ -1,12 +1,12 @@
 import { NavItem } from 'components/AppBar/AppBar.styled';
+import { useAuth } from 'hooks/useAuth';
 
 export const Navigation = () => {
-  // const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
   return (
     <nav>
       <NavItem to="/">Home</NavItem>
-      <NavItem to="/contacts">Contacts</NavItem>
-      {/* {isLoggedIn && (<NavItem to="/contacts">Contacts</NavItem>)} */}
+      {isLoggedIn && <NavItem to="/contacts">Contacts</NavItem>}
     </nav>
   );
 };
