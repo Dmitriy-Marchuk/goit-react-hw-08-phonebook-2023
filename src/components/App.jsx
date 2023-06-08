@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Layout from './Layout';
-import HomePage from 'pages/HomePage';
-import ContactsPage from 'pages/ContactsPage';
-import RegistrationPage from 'pages/RegistrationPage';
-import LoginPage from 'pages/LoginPage';
+import React, { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { refreshUser } from 'redux/auth/operations';
+import { Route, Routes } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
+import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import Layout from './Layout';
+
+const HomePage = lazy(() => import('../pages/Home'));
+const RegistrationPage = lazy(() => import('../pages/Registration'));
+const LoginPage = lazy(() => import('../pages/Login'));
+const PhonebookPage = lazy(() => import('../pages/Phonebook'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const App = () => {
         <Route
           path="/contacts"
           element={
-            <PrivateRoute component={ContactsPage} redirectTo="/login" />
+            <PrivateRoute component={PhonebookPage} redirectTo="/login" />
           }
         />
         <Route path="*" element={<div>NO PAGE</div>} />

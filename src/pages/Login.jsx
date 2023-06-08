@@ -1,7 +1,7 @@
 import LoginForm from 'components/LoginForm/LoginForm';
 import { Helmet } from 'react-helmet';
 
-const LoginPage = () => {
+const Login = () => {
   return (
     <div>
       <Helmet>
@@ -12,4 +12,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

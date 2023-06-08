@@ -6,8 +6,8 @@ export const StyledForm = styled.form`
   border: 1px solid black;
   border-radius: 15px;
   padding: 20px 120px 40px 20px;
-  padding: 20px 120px 40px 20px;
   margin-bottom: 30px;
+  /* max-width: 392px; */
 `;
 
 export const StyledInput = styled.input`

@@ -4,7 +4,7 @@ import {
   StyledInput,
   StyledLabel,
   StyledButton,
-} from './Phonebook.styled';
+} from './PhonebookFrom.styled';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 

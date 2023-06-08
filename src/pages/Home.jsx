@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 
-const HomePage = () => {
+const Home = () => {
   return (
     <>
       <Helmet>
@@ -11,4 +11,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

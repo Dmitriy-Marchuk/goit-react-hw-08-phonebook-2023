@@ -1,8 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-
-const { DeleteButton } = require('components/Contacts/Contacts.styled');
-const { ContactElementStyled } = require('./ContactElement.styled');
+import { ContactElementStyled, DeleteButton } from './ContactElement.styled';
 
 const ContactElement = ({ contact }) => {
   const { name, number } = contact;
