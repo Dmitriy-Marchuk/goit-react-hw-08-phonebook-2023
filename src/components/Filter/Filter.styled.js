@@ -5,7 +5,7 @@ export const FilterWrapper = styled.div`
   flex-direction: column;
   margin: 25px 20px;
 `;
-export const StyledFilter = styled.input`
+export const FilterInput = styled.input`
   width: 300px;
   height: 100%;
   padding: 5px;
@@ -22,13 +22,14 @@ export const StyledFilter = styled.input`
   }
 `;
 
-export const StyledLabel = styled.label`
+export const FilterInputLabel = styled.label`
   margin-left: auto;
   margin-right: auto;
-  font-weight: 500;
+  margin-bottom: 3px;
+  font-weight: 700;
 `;
 
-export const ContactsTitle = styled.h2`
+export const FilterTitle = styled.h2`
   max-width: 385px;
   margin-left: auto;
   margin-right: auto;

@@ -2,10 +2,10 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/contacts/filterSlice';
 import {
-  StyledFilter,
-  StyledLabel,
+  FilterInput,
+  FilterInputLabel,
   FilterWrapper,
-  ContactsTitle,
+  FilterTitle,
 } from './Filter.styled';
 
 const Filter = ({ title }) => {
@@ -17,10 +17,12 @@ const Filter = ({ title }) => {
 
   return (
     <>
-      <ContactsTitle>{title}</ContactsTitle>
+      <FilterTitle>{title}</FilterTitle>
       <FilterWrapper>
-        <StyledLabel htmlFor="filter">Find contacts by name</StyledLabel>
-        <StyledFilter id="filter" type="text" onChange={handleChange} />
+        <FilterInputLabel htmlFor="filter">
+          Find contacts by name
+        </FilterInputLabel>
+        <FilterInput id="filter" type="text" onChange={handleChange} />
       </FilterWrapper>
     </>
   );

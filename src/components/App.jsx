@@ -1,6 +1,6 @@
 import React, { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -16,16 +16,6 @@ const PhonebookPage = lazy(() => import('../pages/Phonebook'));
 const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
-
-  const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location.pathname);
-
-  useEffect(() => {
-    if (location.pathname === '/goit-react-hw-08-phonebook-2023') {
-      navigate('/');
-    }
-  }, [navigate, location.pathname]);
 
   useEffect(() => {
     dispatch(refreshUser());

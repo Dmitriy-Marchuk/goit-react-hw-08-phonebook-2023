@@ -25,4 +25,7 @@ export const NavItem = styled(NavLink)`
     color: #f6ad55;
     transition: ease-in-out 250ms;
   }
+  @media screen and (max-width: 499px) {
+    font-size: 20px;
+  }
 `;

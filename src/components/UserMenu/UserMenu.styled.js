@@ -4,6 +4,11 @@ export const UserMenuWrapper = styled.div`
   display: flex;
   align-items: center;
   font-weight: 500;
+  @media screen and (max-width: 700px) {
+    p {
+      display: none;
+    }
+  }
 `;
 
 export const LogoutButton = styled.button`
