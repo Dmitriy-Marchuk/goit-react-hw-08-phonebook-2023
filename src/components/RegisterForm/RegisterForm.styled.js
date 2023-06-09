@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FormRegistration = styled.form`
+export const FormRegister = styled.form`
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -12,11 +12,11 @@ export const FormRegistration = styled.form`
   border-radius: 15px;
 `;
 
-export const LabelRegistration = styled.label`
+export const LabelRegister = styled.label`
   font-weight: 500;
 `;
 
-export const ButtonRegistration = styled.button`
+export const ButtonRegister = styled.button`
   margin-top: 10px;
   padding: 8px;
   border: none;
@@ -32,7 +32,7 @@ export const ButtonRegistration = styled.button`
   }
 `;
 
-export const InputRegistration = styled.input`
+export const InputRegister = styled.input`
   height: 100%;
   padding: 5px 10px;
   margin-bottom: 10px;

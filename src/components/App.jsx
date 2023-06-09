@@ -6,9 +6,10 @@ import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import Layout from './Layout';
+import NoPage from './NoPage/NoPage';
 
 const HomePage = lazy(() => import('../pages/Home'));
-const RegistrationPage = lazy(() => import('../pages/Registration'));
+const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
 const PhonebookPage = lazy(() => import('../pages/Phonebook'));
 
@@ -27,12 +28,9 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
-          path="/registration"
+          path="/register"
           element={
-            <RestrictedRoute
-              component={RegistrationPage}
-              redirectTo="/contacts"
-            />
+            <RestrictedRoute component={RegisterPage} redirectTo="/contacts" />
           }
         />
         <Route
@@ -47,7 +45,7 @@ const App = () => {
             <PrivateRoute component={PhonebookPage} redirectTo="/login" />
           }
         />
-        <Route path="*" element={<div>NO PAGE</div>} />
+        <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
   );

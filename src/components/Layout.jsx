@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
       <AppBar />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={null}>
         <Outlet />
       </Suspense>
     </>
