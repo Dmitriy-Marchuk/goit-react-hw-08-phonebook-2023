@@ -32,7 +32,15 @@ const HomePageContent = () => {
         use and functionality.
       </Homeparagraph>
       <Homeparagraph>
-        Stay in control of your phonebook. Join our community today and start
+        We take data security seriously at the Phonebook . All your sensitive
+        information, including login, email, passwords, and the contacts you
+        save and delete, are securely stored and transmitted to our backend. We
+        utilize robust encryption protocols and industry-standard security
+        measures to ensure the protection and confidentiality of your data. Rest
+        assured that your information is in safe hands when you use our app.
+      </Homeparagraph>
+      <Homeparagraph>
+        Stay in control of your Phonebook. Join our community today and start
         efficiently managing your contacts!
       </Homeparagraph>
     </HomePageWrapper>
