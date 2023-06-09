@@ -19,17 +19,17 @@ const App = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
-
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  console.log(location.pathname);
 
   useEffect(() => {
     if (location.pathname === '/goit-react-hw-08-phonebook-2023') {
       navigate('/');
     }
   }, [navigate, location.pathname]);
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return isRefreshing ? (
     <b>Refreshing user...</b>
