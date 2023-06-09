@@ -22,7 +22,7 @@ const Phonebook = () => {
           <title>Contacts</title>
         </Helmet>
         <PhonebookForm title="Phonebook" />
-        <Filter title="Contacts" />
+        <Filter title="Contact list" />
         {isLoading && !error && <b>Request in progress...</b>}
         <Contacts />
       </div>

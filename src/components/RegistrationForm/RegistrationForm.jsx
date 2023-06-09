@@ -13,6 +13,7 @@ const RegistrationForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+
     dispatch(
       registration({
         name: form.elements.name.value,

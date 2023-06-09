@@ -5,25 +5,25 @@ export const StyledForm = styled.form`
   flex-direction: column;
   border: 1px solid black;
   border-radius: 15px;
-  padding: 20px 120px 40px 20px;
+  padding: 30px 90px;
   margin-bottom: 30px;
-  /* max-width: 392px; */
+  max-width: 385px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const StyledInput = styled.input`
-  width: 250px;
   height: 100%;
-  padding: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
   border: 1px solid black;
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  font-size: 20px;
+  border-radius: 8px;
+
   :hover,
   :focus {
-    border-color: tomato;
+    border-color: #f6ad55;
     outline: none;
+    transition: ease-in-out 250ms;
   }
 `;
 
@@ -32,17 +32,22 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledButton = styled.button`
-  align-self: flex-start;
-  display: flex;
-  padding: 10px 20px;
-  border: 1px solid black;
-  border: 1px solid black;
-  border-radius: 15px;
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #3182ce;
   cursor: pointer;
   :hover,
   :focus {
-    background-color: tomato;
-    color: #fff;
-    outline: none;
+    background-color: #f6ad55;
+    transition: ease-in-out 250ms;
   }
+`;
+
+export const PhonebookTitle = styled.h2`
+  max-width: 385px;
+  margin-left: auto;
+  margin-right: auto;
 `;

@@ -1,3 +1,4 @@
+import HomePageContent from 'components/HomePageContent/HomePageContent';
 import { Helmet } from 'react-helmet';
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <div>Phonebook welcome page! </div>
+      <HomePageContent />
     </>
   );
 };

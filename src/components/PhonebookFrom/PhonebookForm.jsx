@@ -4,6 +4,7 @@ import {
   StyledInput,
   StyledLabel,
   StyledButton,
+  PhonebookTitle,
 } from './PhonebookFrom.styled';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
@@ -33,7 +34,7 @@ export const PhonebookForm = ({ title }) => {
 
   return (
     <>
-      <h2>{title}</h2>
+      <PhonebookTitle>{title}</PhonebookTitle>
       <StyledForm onSubmit={handleSubmit}>
         <StyledLabel htmlFor="inputName">Name</StyledLabel>
         <StyledInput

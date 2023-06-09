@@ -38,6 +38,7 @@ export const InputLogin = styled.input`
   margin-bottom: 10px;
   border: 1px solid black;
   border-radius: 8px;
+
   :hover,
   :focus {
     border-color: #f6ad55;

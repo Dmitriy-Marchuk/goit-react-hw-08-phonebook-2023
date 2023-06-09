@@ -6,5 +6,4 @@ export const AppContainer = styled.div`
   align-items: center;
   padding: 30px;
   color: #010101;
-  font-size: 20px;
 `;

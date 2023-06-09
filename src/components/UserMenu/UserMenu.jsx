@@ -11,7 +11,7 @@ const UserMenu = () => {
 
   return (
     <UserMenuWrapper>
-      <p>Welcome, {user.name}</p>
+      <p>Welcome, {user.name} !</p>
       <LogoutButton onClick={handleLogOut}>Logout</LogoutButton>
     </UserMenuWrapper>
   );

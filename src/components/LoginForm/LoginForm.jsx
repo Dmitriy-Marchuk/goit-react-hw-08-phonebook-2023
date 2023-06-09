@@ -22,18 +22,20 @@ const LoginForm = () => {
     form.reset();
   };
   return (
-    <FormLogin onSubmit={handleSubmit}>
-      <LabelLogin htmlFor="loginEmail">Email </LabelLogin>
-      <InputLogin id="loginEmail" type="email" name="email" />
-      <LabelLogin htmlFor="loginPass">Password</LabelLogin>
-      <InputLogin
-        id="loginPass"
-        type="password"
-        name="password"
-        autoComplete="off"
-      />
-      <ButtonLogin type="submit">Log In</ButtonLogin>
-    </FormLogin>
+    <>
+      <FormLogin onSubmit={handleSubmit}>
+        <LabelLogin htmlFor="loginEmail">Email </LabelLogin>
+        <InputLogin id="loginEmail" type="email" name="email" />
+        <LabelLogin htmlFor="loginPass">Password</LabelLogin>
+        <InputLogin
+          id="loginPass"
+          type="password"
+          name="password"
+          autoComplete="off"
+        />
+        <ButtonLogin type="submit">Log In</ButtonLogin>
+      </FormLogin>
+    </>
   );
 };
 
