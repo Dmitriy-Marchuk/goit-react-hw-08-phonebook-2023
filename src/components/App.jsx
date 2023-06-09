@@ -1,6 +1,12 @@
 import React, { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import {
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -17,9 +23,19 @@ const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (location.pathname === '/goit-react-hw-08-phonebook-2023') {
+      navigate('/');
+    }
+  }, [navigate, location.pathname]);
 
   return isRefreshing ? (
     <b>Refreshing user...</b>
