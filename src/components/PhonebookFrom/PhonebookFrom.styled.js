@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 15px;
   padding: 30px;
+  width: 392px;
   margin-bottom: 30px;
-  max-width: 385px;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid black;
+  border-radius: 15px;
 `;
 
 export const StyledInput = styled.input`
@@ -47,7 +47,7 @@ export const StyledButton = styled.button`
 `;
 
 export const PhonebookTitle = styled.h2`
-  max-width: 385px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 392px;
 `;

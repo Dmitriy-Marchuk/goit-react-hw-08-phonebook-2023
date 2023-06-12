@@ -4,10 +4,10 @@ export const FormLogin = styled.form`
   display: flex;
   flex-direction: column;
   padding: 30px;
+  max-width: 392px;
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 392px;
   border: 1px solid black;
   border-radius: 15px;
 `;

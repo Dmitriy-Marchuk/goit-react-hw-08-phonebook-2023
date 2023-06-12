@@ -6,7 +6,7 @@ export const FilterWrapper = styled.div`
   margin: 25px 20px;
 `;
 export const FilterInput = styled.input`
-  width: 300px;
+  width: 330px;
   height: 100%;
   padding: 5px;
   margin-bottom: 10px;
