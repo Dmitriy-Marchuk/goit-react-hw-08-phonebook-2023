@@ -1,5 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { setFilter } from 'redux/contacts/filterSlice';
 import {
   FilterInput,
@@ -26,6 +28,10 @@ const Filter = ({ title }) => {
       </FilterWrapper>
     </>
   );
+};
+
+Filter.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Filter;

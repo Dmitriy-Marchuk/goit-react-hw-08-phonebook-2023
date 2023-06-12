@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   StyledForm,
   StyledInput,
@@ -58,6 +59,10 @@ export const PhonebookForm = ({ title }) => {
       </StyledForm>
     </>
   );
+};
+
+PhonebookForm.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default PhonebookForm;
